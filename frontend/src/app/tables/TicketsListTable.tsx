@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table } from '@mantine/core';
-
+import { Paper, createStyles, Center } from '@mantine/core';
+import { colors } from '../constants/colors';
 export interface TicketsListTableItemVM {
     id: string;
     email: string;
@@ -15,7 +16,18 @@ interface TicketsListTableProps {
     items: TicketsListTableItemVM[];
 }
 
+const useStyles = createStyles((theme) => ({
+    tHead: {
+        marginTop: 0,
+        textAlign: 'center',
+        color: `${colors.blue} !important` ,
+       
+    },
+  
+}));
+
 export const TicketsListTable = ({ items }: TicketsListTableProps) => {
+    const { classes } = useStyles();
     const rows =items && items.map((element) => (
         <tr key={element.id}>
             <td>{element.email}</td>
@@ -28,15 +40,15 @@ export const TicketsListTable = ({ items }: TicketsListTableProps) => {
     ));
 
     return (
-        <Table>
+        <Table striped  verticalSpacing="xs">
             <thead>
                 <tr>
-                    <th>Email</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Amount</th>
-                    <th>Supplier</th>
+                    <th className={classes.tHead}>Email</th>
+                    <th className={classes.tHead}>Title</th>
+                    <th className={classes.tHead}>Description</th>
+                    <th className={classes.tHead}>Price</th>
+                    <th className={classes.tHead}>Amount</th>
+                    <th className={classes.tHead}>Supplier</th>
                 </tr>
             </thead>
             <tbody>{ rows}</tbody>

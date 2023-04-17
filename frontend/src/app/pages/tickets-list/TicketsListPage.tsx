@@ -7,18 +7,6 @@ import {  fetchTickets } from '../../store/ticketsSlice'
 import {RootState } from '../../store/store'
 import { useDispatch, useSelector } from 'react-redux';
 
-// const ticketList: TicketsListTableItemVM[] = [
-//     {
-//         id: 'id-5426463',
-//         email: 'test@example.com',
-//         title: 'ticket title',
-//         description: 'ticket description',
-//         price: 'ticket price',
-//         amount: 5,
-//         supplier: 'test supplier',
-//     },
-// ];
-
 const useStyles = createStyles((theme) => ({
     formContainer: {
         width: 850,
@@ -42,7 +30,7 @@ export const TicketsListPage = () => {
             dispatch(fetchTickets())
         }
     },[listStatus,dispatch]);
-    
+
     return (
         <PageLayout>
             <Center>

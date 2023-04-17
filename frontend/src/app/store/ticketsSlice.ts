@@ -44,6 +44,7 @@ export const fetchTickets =  createAsyncThunk('tickets/fetchTickets', async () =
    
 });
 
+
 export const ticketList = (state: ticketsInitialState) => state.ticketList
 export const status = (state: ticketsInitialState) => state.status
 export const error = (state: ticketsInitialState) => state.error
