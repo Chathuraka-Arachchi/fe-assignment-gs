@@ -16,7 +16,7 @@ interface TicketsListTableProps {
 }
 
 export const TicketsListTable = ({ items }: TicketsListTableProps) => {
-    const rows = items.map((element) => (
+    const rows =items && items.map((element) => (
         <tr key={element.id}>
             <td>{element.email}</td>
             <td>{element.title}</td>
@@ -39,7 +39,7 @@ export const TicketsListTable = ({ items }: TicketsListTableProps) => {
                     <th>Supplier</th>
                 </tr>
             </thead>
-            <tbody>{rows}</tbody>
+            <tbody>{ rows}</tbody>
         </Table>
     );
 };
