@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from '@mantine/core';
-import { Paper, createStyles, Center } from '@mantine/core';
+import { createStyles } from '@mantine/core';
 import { colors } from '../constants/colors';
 export interface TicketsListTableItemVM {
     id: string;
